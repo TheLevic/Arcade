@@ -15,19 +15,19 @@ Hangman::~Hangman()
 
 void Hangman::displayHangman()
 {
-    if (numLives == 0)
+    if (numLives == 6)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl;
 
     }
-    else if (numLives == 1)
+    else if (numLives == 5)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl
              << " o " << endl;
     }
-    else if (numLives == 2)
+    else if (numLives == 4)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl
@@ -41,14 +41,14 @@ void Hangman::displayHangman()
              << " o " << endl
              << "-| " << endl;
     }
-    else if (numLives == 4)
+    else if (numLives == 2)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl
              << " o " << endl
              << "-|-" << endl;
     }
-    else if (numLives == 5)
+    else if (numLives == 1)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl
@@ -56,7 +56,7 @@ void Hangman::displayHangman()
              << "-|-" << endl
              << "/  " << endl;
     }
-    else if (numLives == 6)
+    else if (numLives == 0)
     {
         cout << "-- " << " Lives: " << numLives << endl
              << " | " << endl
