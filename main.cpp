@@ -2,6 +2,7 @@
 #include "connect4.h"
 #include "tictactoe.h"
 #include "Hangman.h"
+#include "battleship.h"
 using namespace std;
 
 const int QUIT = 6;
@@ -106,7 +107,13 @@ int main()
         break;
         }
         case 4: cout << "Checkers"; break;
-        case 5: cout << "Battleship"; break;
+        case 5:
+        {
+          Battle battleshipgame;
+          battleshipgame.createboard();
+          battleshipgame.printBoard();
+          battleshipgame.placeShips();
+        }
         case 6: 
         {
             cout << "It was nice seeing you, have a great day!"<< endl

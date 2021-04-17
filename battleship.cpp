@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <fstream>
-#include "battleships.h"
+#include "/home/thelevic/code/Arcade/battleship.h"
 using namespace std;
 
 
@@ -51,7 +51,6 @@ void Battle::createboard()
 //----------------------------------------------------------------
 void Battle::printBoard()
 {
-    createboard();
     char c = 'a';
     cout << "           BATTLESHIPS \n      ";
     for(int i = 0; i < SIZE_COL; i++)
@@ -123,15 +122,16 @@ cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
 // Returns:     none
 // Purpose:     placing ships on board.  The switch statment is looking to see w                                                                                                                                       hat letter the user put and if they want to put the ship vertically or horizonta                                                                                                                                       lly and then creating a for loop that adds X's to that area.
 //----------------------------------------------------------------
-void Battle::placement(char ship1, int ship2, char VorH, int Size)
+void Battle::placement(const char ship1,const int ship2,const char VorH,const int Size)
 {
 int i;
 switch(ship1){
                 case 'a':
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
-                                        cout << "ZZZZZZZZZZZZZZZZZZZZZZZZZZZ"; /                                                                                                                                       /this is testing to see if the program is reaching this loop
-                                        board[0][i] = 'X'; // FIX - this is not                                                                                                                                        chaning the board
+                                        cout << "ZZZZZZZZZZZZZZZZZZZZZZZZZZZ" << endl;   //this is testing to see if the program is reaching this loop
+                                        board[i][0] = 'X'; // FIX - this is not   chaning the board
+                                                          
                                 }
                         }
                         else{
@@ -185,25 +185,25 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
                                 break;
                         case 2:
                                 if(ship2 == 9){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 3:
                                 if(ship2 >= 8){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 4:
                                 if(ship2 >= 7){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 5:
                                 if(ship2 >= 6){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
@@ -218,25 +218,25 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
                                 break;
                         case 2:
                                 if(ship1 >= 'j'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 3:
                                 if(ship1 >= 'i'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 4:
                                 if(ship1 >= 'h'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 5:
                                 if(ship1 >= 'g'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
@@ -249,25 +249,3 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
 
 return TorF;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int main()
-{
-        Battle ships;
-        ships.printBoard();
-        ships.placeShips();
-        return 0;
-}
-
