@@ -6,6 +6,8 @@
 using namespace std;
 
 
+
+
 //---------------------------------------------------------------------------
 // Name: Battle
 // Parameters: none
@@ -77,6 +79,21 @@ void Battle::printBoard()
 //----------------------------------------------------------------
 void Battle::placeShips()
 {
+        char fighter1;
+        int fighter2;
+        int fighterSize = 4;
+
+        char cruiser1;
+        int cruiser2;
+        int cruiserSize = 3;
+
+        char destroyer1;
+        int destroyer2;
+        int destroyerSize = 2;
+
+        char sub1;
+        int sub2;
+        int subSize = 1;
         char carrier1;
         int carrier2;
         int carrierSize = 5;

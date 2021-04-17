@@ -17,8 +17,8 @@ class Battle
                 bool error(char ship1, int ship2, char VorH, int Size);
                 void placement(char ship1, int ship2, char VorH, int Size);
                 void getInput();
-                void compareBoardtoInp(Battle player);
-
+                void compareBoardtoInp(Battle playerx);
+                void checkWinner();
         private:
           static const int SIZE_COL = 10;
           static const int SIZE_ROW = 10;
