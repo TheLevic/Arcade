@@ -85,12 +85,10 @@ int main()
             bool anotherRound = true;
             do { //loops tictactoe game
                 tictactoe game;
-                char board[boardSize][boardSize];
+                char board[9] = {'0', '1','2','3','4','5','6','7','8'};
                 game.intro();
-                game.getInput(board);
                 game.printBoard(board);
-                game.checkInputs(board);
-                game.checkWinner(board);
+                game.playerMove(board);
                 cout << "Would you like to play another round? Y or N\n";
                 cin >> playAgain;
                 playAgain = tolower(playAgain);

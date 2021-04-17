@@ -5,71 +5,136 @@
 void tictactoe::intro()
 {
     cout << "Welcome to PF1GANG's Tic-Tac-Toe.\n";
-    cout << "This is a 2 player game, grab your oponent and let's get started!\n";
+    cout << "This is a 2 player game, so grab your opponent and let's get started!\n";
 }
 
-void tictactoe::getInput(char board[boardSize][boardSize])
+void tictactoe::printBoard(const char board[9])
 {
-    cout << "Enter your x's and o's on the board (Left to right, top to bottom): "; //get user input
-   for (int row = 0; row < boardSize; row++)
-      for (int col = 0; col < boardSize; col++)
-            cin >> board[row][col];
+    cout << "+---+---+---+\n" << "| " << board[0] << " | "
+         << board[1] << " | " << board[2] << " |" << endl;
+    cout << "+---+---+---+\n" << "| " << board[3] << " | "
+         << board[4] << " | " << board[5] << " |" << endl;
+    cout << "+---+---+---+\n" << "| " << board[6] << " | "
+         << board[7] << " | " << board[8] << " |" << endl;
+    cout << "+---+---+---+" << endl;
 }
 
-void tictactoe::printBoard(const char board[boardSize][boardSize])
+bool tictactoe::checkWinning(char board[9])
 {
-    cout << "\n|---|---|---|\n"; 
-   for (int row = 0; row < boardSize; row++)
-   {
-      cout << "| ";
-      for (int col = 0; col < boardSize; col++)
-         cout << board[row][col] << " | ";
-      cout << "\n|---|---|---|\n";
-   }
+    if (board[0] == board[1] && board[1] == board[2])
+        { 
+        if (board[2] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[3] == board[4] && board[4] == board[5])
+        { 
+        if (board[5] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[6] == board[7] && board[7] == board[8])
+        { 
+        if (board[8] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[0] == board[3] && board[3] == board[6])
+        { 
+        if (board[6] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[1] == board[4] && board[4] == board[7])
+        { 
+        if (board[7] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[2] == board[5] && board[5] == board[8])
+        { 
+        if (board[8] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[0] == board[4] && board[4] == board[8])
+        { 
+        if (board[8] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if (board[2] == board[4] && board[4] == board[6])
+        { 
+        if (board[6] == 'o')
+            cout << "Congrats Player2, you are the winner!" << endl;
+        else
+            cout << "Congrats Player1, you are the winner!" << endl;
+        return true;
+        }
+    else if ((board[0]=='o'||board[0]=='x')&&(board[1]=='o'||board[1]=='x')&&(board[2]=='o'||board[2]=='x')&&(board[3]=='o'||board[3]=='x')&&(board[4]=='o'||board[4]=='x')&&(board[5]=='o'||board[5]=='x')&&(board[6]=='o'||board[6]=='x')&&(board[7]=='o'||board[7]=='x')&&(board[8]=='o'||board[8]=='x'))
+        {
+            cout << "Looks like we have a tie, better luck next time!" << endl;
+            return true;
+        }
+    else 
+        return false;
 }
-
-void tictactoe::checkInputs(char board[boardSize][boardSize])
+void tictactoe::playerMove(char board[9])
 {
-   bool checkInput = true;
-   for (int row = 0; row < boardSize; row++) // check user input for only x's and o's
-      for (int col = 0; col < boardSize; col++)
-      {
-   if (board[row][col] == 'x' || board[row][col] == 'o')
-        checkInput = true;
-   else
-        checkInput = false;
-      }
+    int box;
+    bool validMove;
+    while (!checkWinning(board))
+    {
+        cout << "Player1, what box would you like to place you piece in?" << endl;
+        cin >> box;
+        do{
+            if (box >= 9 || box <= -1 ) {
+                cout << "Sorry that is not an option." << endl;
+                validMove = false; }
+            else if (board[box] == 'x' || board[box] == 'o'){
+                cout << "Sorry that spots alread taken." << endl;
+                validMove = false; }
+            else {
+                board[box] = 'x';
+                validMove = true; }
+        }while(validMove == false);
         
-   if (!checkInput)
-   {
-      cout << "Sorry, you can only enter x's and o's\n";
-      exit(1);
-   }
+        printBoard(board);
+        
+        if (!checkWinning(board))
+            {
+            do
+                {
+                cout << "Player2, what box would you like to place you piece in?" << endl;
+                cin >> box;
+                if (box >= 9 || box <= -1 ) {
+                    cout << "Sorry that is not an option." << endl;
+                    validMove = false; }
+                else if (board[box] == 'x' || board[box] == 'o'){
+                    cout << "Sorry that spots alread taken." << endl;
+                    validMove = false; }
+                else
+                    {
+                    board[box] = 'o';
+                    validMove = true;
+                    }
+                }while(validMove == false);
+            }
+        printBoard(board);
+    }
 }
 
-void tictactoe::checkWinner(char board[boardSize][boardSize])
-{
-    char winner = ' '; // check top left to bottom right diagonal
-   if ((board[0][0] == board[1][1]) &&
-       (board[1][1] == board[2][2]))
-      winner = board[0][0];
-      
-   if ((board[0][2] == board[1][1]) && // check bottom left to top right diagonal
-       (board[1][1] == board[2][0]))
-      winner = board[0][0];
-
-   for (int row = 0; row < boardSize; row++) // check the rows for a winner
-      if ((board[row][0] == board[row][1]) &&
-          (board[row][1] == board[row][2]))
-         winner = board[row][0];
-
-   for (int row = 0; row < boardSize; row++) // check the columns for a winner
-      if ((board[0][row] == board[1][row]) &&
-          (board[1][row] == board[2][row]))
-         winner = board[0][row];
-         
-   if (winner != ' ')
-      cout << "Congratulations to whichever oponent is " << winner << ", you are the winner!\n";
-   else
-      cout << "Oof looks like its a tie, better luck next time!\n";
-}
