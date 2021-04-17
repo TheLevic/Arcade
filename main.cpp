@@ -1,5 +1,6 @@
 #include <iostream>
 #include "connect4.h"
+#include "tictactoe.h"
 
 using namespace std;
 
@@ -107,7 +108,17 @@ int main()
 
         break;
         }
-        case 3: cout << "Tic-Tac-Toe"; break;
+        case 3: 
+        {
+        tictactoe game;
+        char board[boardSize][boardSize];
+        game.intro();
+        game.getInput(board);
+        game.printBoard(board);
+        game.checkInputs(board);
+        game.checkWinner(board);
+        break;
+        }
         case 4: cout << "Checkers"; break;
         case 5: cout << "Battleship"; break;
     }
