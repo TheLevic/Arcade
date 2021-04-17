@@ -156,7 +156,8 @@ cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
                 cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
                 cin >> VorH;
                 VorH = tolower(VorH);
-
+	
+	}
         cout <<  "Please enter a space from A0 to J9:" << endl;
         cin >> cruiser1 >> cruiser2;
         cruiser1 = tolower(cruiser1);
@@ -183,7 +184,7 @@ cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
                 cin >> VorH;
                 VorH = tolower(VorH);
 
-
+	}
         cout <<  "Please enter a space from A0 to J9:" << endl;
         cin >> destroyer1 >> destroyer2;
         destroyer1 = tolower(destroyer1);
