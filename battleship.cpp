@@ -129,23 +129,13 @@ switch(ship1){
                 case 'a':
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
-<<<<<<< HEAD
                                         cout << "ZZZZZZZZZZZZZZZZZZZZZZZZZZZ" << endl;   //this is testing to see if the program is reaching this loop
                                         board[i][0] = 'X'; // FIX - this is not   chaning the board
                                                           
-=======
                                         board[i][0+ship2] = 'X';
->>>>>>> 08027a9c845c837e1d5b0fe4ca308d27fc75110d
                                 }
                         }
-                        else{
-                                for(i=0; i < Size; i++){
-                                        board[0][i+ship2] = 'X';
-                                }
-
-                        }
-                        break;
-                case 'b':
+                        
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
                                         board[i][1+ship2] = 'X';
@@ -206,11 +196,11 @@ switch(ship1){
                         else{
                                 for(i=0; i < Size; i++){
                                         board[5][i+ship2] = 'X';
+                                        
                                 }
-
                         }
                         break;
-                case 'g':
+                case 'g':         
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
                                         board[i][6+ship2] = 'X';
@@ -219,8 +209,8 @@ switch(ship1){
                         else{
                                 for(i=0; i < Size; i++){
                                         board[6][i+ship2] = 'X';
+                                        
                                 }
-
                         }
                         break;
                 case 'h':
@@ -354,31 +344,6 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
 
 
 return TorF;
-<<<<<<< HEAD
-}
-=======
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-int main()
-{
-        Battle ships;
-        ships.createboard();
-        ships.printBoard();
-        ships.placeShips();
-        return 0;
-}
-
->>>>>>> 08027a9c845c837e1d5b0fe4ca308d27fc75110d
+//
