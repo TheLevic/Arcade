@@ -130,7 +130,7 @@ switch(ship1){
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
                                         cout << "ZZZZZZZZZZZZZZZZZZZZZZZZZZZ" << endl;   //this is testing to see if the program is reaching this loop
-                                        board[i][0] = 'X'; // FIX - this is not   chaning the board
+                                        board[i][0] = 'X';
                                                           
                                         board[i][0+ship2] = 'X';
                                 }
@@ -346,4 +346,18 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
 return TorF;
 }
 
-//
+void Battle::compareBoardtoInp(Battle player){
+        //Varaible declarations
+        char ship1;
+        int ship2;
+        cout << "Please enter coordinate between a0 and j9: " << endl;
+        cin >> ship1 >> ship2;
+
+        if (player.board[ship1][ship2] == 'X'){
+                cout << "Hit!" << endl;
+                player.board[ship1][ship2] == 'H';
+        }
+        else{
+                cout << "Miss!" << endl;
+        }
+}

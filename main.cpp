@@ -110,7 +110,9 @@ int main()
         case 5:
         {
           Battle battleshipgame;
-          battleshipgame.createboard();
+          Battle player1;
+          Battle player2;
+          player1.createboard();
           battleshipgame.printBoard();
           battleshipgame.placeShips();
         }

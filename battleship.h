@@ -16,6 +16,8 @@ class Battle
                 void placeShips();
                 bool error(char ship1, int ship2, char VorH, int Size);
                 void placement(char ship1, int ship2, char VorH, int Size);
+                void getInput();
+                void compareBoardtoInp(Battle player);
 
         private:
           static const int SIZE_COL = 10;
