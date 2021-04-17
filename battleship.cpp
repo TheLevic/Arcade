@@ -346,18 +346,20 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
 return TorF;
 }
 
-void Battle::compareBoardtoInp(Battle player){
+void Battle::compareBoardtoInp(Battle playerx){
         //Varaible declarations
         char ship1;
         int ship2;
         cout << "Please enter coordinate between a0 and j9: " << endl;
         cin >> ship1 >> ship2;
-
-        if (player.board[ship1][ship2] == 'X'){
+        
+        if (playerx.board[ship1][ship2] == 'X'){
                 cout << "Hit!" << endl;
-                player.board[ship1][ship2] == 'H';
+                playerx.board[ship1][ship2] == 'H';
         }
         else{
                 cout << "Miss!" << endl;
         }
 }
+
+void Battle::switchPlayers()
