@@ -51,7 +51,6 @@ void Battle::createboard()
 //----------------------------------------------------------------
 void Battle::printBoard()
 {
-    createboard();
     char c = 'a';
     cout << "           BATTLESHIPS \n      ";
     for(int i = 0; i < SIZE_COL; i++)
@@ -83,7 +82,7 @@ void Battle::placeShips()
         int carrierSize = 5;
         char VorH;
 
-        cout << endl << "Where would you like to place your Aircaft Carrier ship                                                                                                                                       ?" << endl;
+        cout << endl << "Where would you like to place your Aircaft Carrier ship?" << endl;
         cout << "This ship is 5 long. " << endl;
 
 cout << "                           _" << endl;
@@ -93,12 +92,12 @@ cout << "     .___.....// //__| |__/\\ /\\_/H__,      ^^"<< endl;
 cout << "      \\                             /" << endl;
 cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
 
-        cout << endl << "Would you like to place this ship horizontally or verti                                                                                                                                       cally?" << endl;
-        cout << "Please enter a \'h\' for horizontally and a \'v\' for verticall                                                                                                                                       y." << endl;
+        cout << endl << "Would you like to place this ship horizontally or vertically?" << endl;
+        cout << "Please enter a \'h\' for horizontally and a \'v\' for vertically." << endl;
         cin >> VorH;
         VorH = tolower(VorH);
         while(VorH != 'v' &&  VorH != 'h'){
-                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for                                                                                                                                        vertically.";
+                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
                 cin >> VorH;
                 VorH = tolower(VorH);
         }
@@ -121,7 +120,7 @@ cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
 // Name:        placement
 // Parameters:  the letter and the number for a ship
 // Returns:     none
-// Purpose:     placing ships on board.  The switch statment is looking to see w                                                                                                                                       hat letter the user put and if they want to put the ship vertically or horizonta                                                                                                                                       lly and then creating a for loop that adds X's to that area.
+// Purpose:     placing ships on board.  The switch statment is looking to see what letter the user put and if they want to put the ship vertically or horizontally and then creating a for loop that adds X's to that area.
 //----------------------------------------------------------------
 void Battle::placement(char ship1, int ship2, char VorH, int Size)
 {
@@ -130,31 +129,132 @@ switch(ship1){
                 case 'a':
                         if(VorH == 'v'){
                                 for(i=0; i < Size; i++){
-                                        cout << "ZZZZZZZZZZZZZZZZZZZZZZZZZZZ"; /                                                                                                                                       /this is testing to see if the program is reaching this loop
-                                        board[0][i] = 'X'; // FIX - this is not                                                                                                                                        chaning the board
+                                        board[i][0+ship2] = 'X';
                                 }
                         }
                         else{
+                                for(i=0; i < Size; i++){
+                                        board[0][i+ship2] = 'X';
+                                }
 
                         }
                         break;
                 case 'b':
+                        if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][1+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[1][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'c':
+                         if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][2+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[2][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'd':
+                          if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][3+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[3][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'e':
+                           if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][4+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[4][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'f':
+                           if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][5+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[5][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'g':
+                        if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][6+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[6][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'h':
+                        if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][7+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[7][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'i':
+                        if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][8+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[8][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
                 case 'j':
+                        if(VorH == 'v'){
+                                for(i=0; i < Size; i++){
+                                        board[i][9+ship2] = 'X';
+                                }
+                        }
+                        else{
+                                for(i=0; i < Size; i++){
+                                        board[9][i+ship2] = 'X';
+                                }
+
+                        }
                         break;
 
 
@@ -185,25 +285,25 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
                                 break;
                         case 2:
                                 if(ship2 == 9){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 3:
                                 if(ship2 >= 8){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 4:
                                 if(ship2 >= 7){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 5:
                                 if(ship2 >= 6){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
@@ -218,25 +318,25 @@ bool Battle::error(char ship1, int ship2, char VorH, int Size)
                                 break;
                         case 2:
                                 if(ship1 >= 'j'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 3:
                                 if(ship1 >= 'i'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 4:
                                 if(ship1 >= 'h'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
                         case 5:
                                 if(ship1 >= 'g'){
-                                        cout << "That is not a valid move." << e                                                                                                                                       ndl;
+                                        cout << "That is not a valid move." << endl;
                                         TorF = false;
                                 }
                                 break;
@@ -266,6 +366,7 @@ return TorF;
 int main()
 {
         Battle ships;
+        ships.createboard();
         ships.printBoard();
         ships.placeShips();
         return 0;
