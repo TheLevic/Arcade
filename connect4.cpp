@@ -224,15 +224,16 @@ bool connect4::keepPlaying()
     cout << "Would you like to keep playing? Enter Y or N." << endl;
     cin >> yorn;
 
-    while (yorn != 'Y' && yorn != 'N'){
+    while (yorn != 'y' && yorn != 'n'){
         cout << "You did not enter in a valid value. Would you like to keep playing? Enter Y or N: " << endl;
         cin >> yorn;
+        yorn = tolower(yorn);
     }
 
-    if (yorn == 'Y'){
+    if (yorn == 'y'){
         return true;
     }
-    else if (yorn == 'N'){
+    else if (yorn == 'n'){
         return false;
     }
     return 0;
