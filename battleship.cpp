@@ -115,6 +115,118 @@ cout << "    #####^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~" << endl;
         }
 
         placement(carrier1, carrier2, VorH, carrierSize);
+
+
+        //Fighter
+        cout << endl << "Where would you like to place your Fighter ship?" << endl;
+        cout << "This ship is 4 long. " << endl;
+
+        cout << endl << "Would you like to place this ship horizontally or vertically?" << endl;
+        cout << "Please enter a \'h\' for horizontally and a \'v\' for vertically." << endl;
+        cin >> VorH;
+        VorH = tolower(VorH);
+        while(VorH != 'v' &&  VorH != 'h'){
+                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
+                cin >> VorH;
+                VorH = tolower(VorH);
+        }
+
+        cout <<  "Please enter a space from A0 to J9:" << endl;
+        cin >> fighter1 >> fighter2;
+        fighter1 = tolower(fighter1);
+
+        while (error(fighter1, fighter2, VorH, fighterSize) != true){
+                cout << endl << "Please enter a space from A0 to J9:" << endl;
+                cin >> fighter1 >> fighter2;
+                fighter1 = tolower(fighter1);
+                error(fighter1, fighter2, VorH, fighterSize);
+        }
+
+        placement(fighter1, fighter2, VorH, fighterSize);
+
+        //Cruiser
+        cout << endl << "Where would you like to place your Cruiser ship?" << endl;
+        cout << "This ship is 3 long. " << endl;
+
+        cout << endl << "Would you like to place this ship horizontally or vertically?" << endl;
+        cout << "Please enter a \'h\' for horizontally and a \'v\' for vertically." << endl;
+        cin >> VorH;
+        VorH = tolower(VorH);
+        while(VorH != 'v' &&  VorH != 'h'){
+                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
+                cin >> VorH;
+                VorH = tolower(VorH);
+	
+	}
+        cout <<  "Please enter a space from A0 to J9:" << endl;
+        cin >> cruiser1 >> cruiser2;
+        cruiser1 = tolower(cruiser1);
+
+        while (error(cruiser1, cruiser2, VorH, cruiserSize) != true){
+                cout << endl << "Please enter a space from A0 to J9:" << endl;
+                cin >> cruiser1 >> cruiser2;
+                cruiser1 = tolower(cruiser1);
+                error(cruiser1, cruiser2, VorH, cruiserSize);
+        }
+
+        placement(cruiser1, cruiser2, VorH, cruiserSize);
+
+        //Destoyer
+        cout << endl << "Where would you like to place your Destroyer ship?" << endl;
+        cout << "This ship is 2 long. " << endl;
+
+        cout << endl << "Would you like to place this ship horizontally or vertically?" << endl;
+        cout << "Please enter a \'h\' for horizontally and a \'v\' for vertically." << endl;
+        cin >> VorH;
+        VorH = tolower(VorH);
+        while(VorH != 'v' &&  VorH != 'h'){
+                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
+                cin >> VorH;
+                VorH = tolower(VorH);
+
+	}
+        cout <<  "Please enter a space from A0 to J9:" << endl;
+        cin >> destroyer1 >> destroyer2;
+        destroyer1 = tolower(destroyer1);
+
+        while (error(destroyer1, destroyer2, VorH, destroyerSize) != true){
+                cout << endl << "Please enter a space from A0 to J9:" << endl;
+                cin >> destroyer1 >> destroyer2;
+                destroyer1 = tolower(destroyer1);
+                error(destroyer1, destroyer2, VorH, destroyerSize);
+        }
+
+        placement(destroyer1, destroyer2, VorH, destroyerSize);
+
+        //Sub
+        cout << endl << "Where would you like to place your Cruiser ship?" << endl;
+        cout << "This ship is 1 long. " << endl;
+
+
+
+        cout << endl << "Would you like to place this ship horizontally or vertically?" << endl;
+        cout << "Please enter a \'h\' for horizontally and a \'v\' for vertically." << endl;
+        cin >> VorH;
+        VorH = tolower(VorH);
+        while(VorH != 'v' &&  VorH != 'h'){
+                cout <<  "Please enter a \'h\' for horizontally and a \'v\' for vertically.";
+                cin >> VorH;
+                VorH = tolower(VorH);
+        }
+
+        cout <<  "Please enter a space from A0 to J9:" << endl;
+        cin >> sub1 >> sub2;
+        sub1 = tolower(sub1);
+
+        while (error(sub1, sub2, VorH, subSize) != true){
+                cout << endl << "Please enter a space from A0 to J9:" << endl;
+                cin >> sub1 >> sub2;
+                sub1 = tolower(sub1);
+                error(sub1, sub2, VorH, subSize);
+        }
+
+        placement(sub1, sub2, VorH, subSize);
+
 }
 //----------------------------------------------------------------
 // Name:        placement
@@ -361,5 +473,3 @@ void Battle::compareBoardtoInp(Battle playerx){
                 cout << "Miss!" << endl;
         }
 }
-
-void Battle::switchPlayers()
